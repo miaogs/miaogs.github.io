@@ -8,13 +8,32 @@ cache:
     - node_modules
 # cache: npm
 
+env:
+    global:
+        - GH_REF: github.com/miaogs/miaogs.github.io.git #设置GH_REF，注意更改yourname
+
 # assign build branches
 branches:
   only:
     - dev # build dev branch only
 
+install:
+    - npm install # 安装hexo及插件
+
 script:
+  - hexo clean
   - hexo generate
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "Michael" # 修改name
+  - git config user.email "1247508314@qq.com" # 修改email
+  - git add .
+  - git commit -m "Travis CI Auto Builder"
+  # Github
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master # GH_TOKEN是在Travis中配置token的名称
+
 deploy:
   provider: pages
   skip-cleanup: true
@@ -23,3 +42,4 @@ deploy:
   on:
     branch: master #deploy master branch only
   local-dir: public
+
