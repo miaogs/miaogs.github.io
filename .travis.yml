@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - 14.15.1
+
+# cache this directory
+cache:
+  directories:
+    - node_modules
+# cache: npm
+
+# assign build branches
+branches:
+  only:
+    - dev # build dev branch only
+
+script:
+  - hexo generate
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: master #deploy master branch only
+  local-dir: public
