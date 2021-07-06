@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="你还在使用 Window 的默认终端吗？用过 Window 默认终端的都知道，真的太丑、太烂、太落伍。微软也逐渐意识到这个问题，并在 Build2019 大会上发布了 新一代 Window 终端程序：Window Terminal 。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window Terminal 安装以及使用">
+<meta property="og:url" content="http://example.com/2021/02/16/Window-Terminal-Preview/index.html">
+<meta property="og:site_name" content="小小的梦呓">
+<meta property="og:description" content="你还在使用 Window 的默认终端吗？用过 Window 默认终端的都知道，真的太丑、太烂、太落伍。微软也逐渐意识到这个问题，并在 Build2019 大会上发布了 新一代 Window 终端程序：Window Terminal 。">
+<meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/first-run.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/campbell-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/campbell-powershell-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/vintage-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/vintage-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/one-half-light-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/solarized-dark-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/solarized-light-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/tango-dark-color-scheme.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/tango-light-color-scheme.png">
+<meta property="og:image" content="https://media.giphy.com/media/7vfUXj4qFCQQuuXio7/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/CnRK0CmkKNxP3F99BX/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/hJ0LpwRyqxfmAwpm42/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/MdCxAwD9T3WeTx9L70/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/kOR3kmVQf6OFe8PlEz/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/l5hFoMKcwhxFqJOEKk/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/O2TQ2mrYO6vyjwLv0s/giphy.gif">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/February22100672.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/0222121374.png">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/terminal.png">
+<meta property="og:image" content="https://media.giphy.com/media/B5BCVGu3rXeM2QjH4j/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/FTNZrKSUiwGqnl93xi/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/hW7exb5M8vdPV1y83K/giphy.gif">
+<meta property="og:image" content="https://media.giphy.com/media/VgimY4sXWFDLzU7Cqr/giphy.gif">
+<meta property="og:image" content="https://gitee.com/miaogs/blog_image/raw/master/0222123075.png">
+<meta property="article:published_time" content="2021-02-16T15:44:53.000Z">
+<meta property="article:modified_time" content="2021-07-06T12:23:16.689Z">
+<meta property="article:author" content="Michael Miao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/miaogs/blog_image/raw/master/first-run.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2021/02/16/Window-Terminal-Preview/"/>
+
+
+
+
+
+  <title>Window Terminal 安装以及使用 | 小小的梦呓</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小小的梦呓</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Michael Miao 的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/searchs" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/Window-Terminal-Preview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael Miao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小小的梦呓">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Window Terminal 安装以及使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-16T15:44:53+00:00">
+                2021-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>你还在使用 <code>Window</code> 的默认终端吗？<br>用过 <code>Window</code> 默认终端的都知道，真的太丑、太烂、太落伍。<br>微软也逐渐意识到这个问题，并在 <code>Build2019</code> 大会上发布了 新一代 <code>Window</code> 终端程序：<code>Window Terminal</code> 。</p>
+<a id="more"></a>
+
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a><span id="jumpto1"><a href="#1">1. 简介</a></span></h2><p>第一代产品不没有实现预期的功能，甚至有些严重性的功能缺陷。<br>但是随着 <code>Window Terminal</code> 的不断更新(目前已经到了 <code>v1.6.10412.0</code>)，个人觉得已经是一个比较不错的的终端了。<br>支持许多功能诸如：</p>
+<ul>
+<li>支持各种 <code>Shell</code>的配置文件 ,例如命令行工具、命令提示符、<code>PowerShell</code> 、<code>WSL2</code> ( <code>Linux</code> 子系统)等等</li>
+<li>支持自定义主题、样式方案和配置，支持多种配色方案和设置</li>
+<li>自定义操作，支持使用多种自定义命令，可以修改默认的键盘快捷方式</li>
+<li>可以显示 <code>Unicode</code> 和 <code>UTF-8</code> 字符，支持各种语言的表情符号和字符</li>
+<li>支持 <code>GPU</code> 加速文本呈现，提供比默认 <code>Windows</code> 命令行体验更好的性能</li>
+<li>支持背景图像, <code>Window Terminal</code> 窗口中显示背景图像和 <code>gif</code> ，<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/terminal/customize-settings/profile-appearance#background-image">配置文件-外观</a></li>
+<li>命令行参数，可以使用命令行参数将 <code>Window Terminal</code> 设置为在特定配置中启动</li>
+<li>快速高效，并且不会占用太多的内存和电量(这个很重要哦)</li>
+</ul>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a><span id="jumpto2"><a href="#2">2. 安装</a></span></h2><p>目前有两个版本，一个是 <code>Window Terminal</code> ,另一个是 <code>Window Terminal Preview</code> 。<br>区别在于 <code>Window Terminal Preview</code> 版本类似于开发工程版，但是还没有正式 <code>Release</code> , 所以两个版本都可以安装。</p>
+<p>安装方法有很多，比如可以直接从 <a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab">Microsoft Store</a> 下载安装。</p>
+<p>如果你无法访问 <code>Microsoft Store</code>，<a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal/releases"><code>GitHub</code> 发布页</a>上发布有内部版本。 如果从 <code>GitHub</code> 安装，<code>Window Terminal</code> 将不会自动更新为新版本。</p>
+<p>或者通过 <code>Window</code> 的软件包工具 <a target="_blank" rel="noopener" href="https://github.com/microsoft/winget-cli">winget</a> (全称： <code>Windows Package Manager Client</code> )安装，类似 <code>Linux</code> 的 <code>apt-get</code> .</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winget install --id=Microsoft.WindowsTerminal -e</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-启动"><a href="#3-启动" class="headerlink" title="3. 启动"></a><span id="jumpto3"><a href="#3">3. 启动</a></span></h2><p>安装后打开 <code>Windows Terminal</code> 时，它会在打开的选项卡中通过 <code>PowerShell</code> 作为默认配置文件启动。</p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/first-run.png" style="zoom:30%" div align=center />
+
+
+<p><strong>支持动态配置文件</strong></p>
+<p>如果安装了多个 <code>shell</code> , <code>Window terminal</code> 会自动创建配置文件。</p>
+<p><strong>打开新选项卡</strong></p>
+<p>可以按 <code>ctrl+shift+t</code> 或直接选择窗口上方 <code>+</code>（加号）按钮，打开默认配置文件的新选项卡。 若要打开其他配置文件，请选择 <code>+</code> 按钮旁的 <code>˅</code>（箭头）打开下拉菜单。 然后可以从中选择要打开的配置文件。</p>
+<p><strong>打开新窗格</strong></p>
+<p>可以使用窗格并行运行多个 <code>shell</code> 。 若要打开窗格，可以使用 <code>alt+shift+d</code> 。 此键绑定将打开焦点配置文件的重复窗格。</p>
+<p><strong>配置</strong></p>
+<p>若要自定义 <code>Windows Terminal</code> 的设置，请在下拉菜单中选择 “setting”。 这会在默认文本编辑器中打开 <code>settings.json</code> 文件。 （默认文本编辑器在 <a href="ms-settings:defaultapps">Windows</a> 设置 中定义。）<br><code>Windows Terminal</code> 支持自定义影响整个应用程序的全局属性、影响每个配置文件的设置的配置文件属性以及允许你使用键盘与 <code>Windows Terminal</code> 交互的键绑定。</p>
+<p>如果需要更深入的配置可以查看<a href="#jumpto12">12. 自定义配置</a>。</p>
+<h3 id="4-配色方案"><a href="#4-配色方案" class="headerlink" title="4 配色方案"></a><span id="jumpto4"><a href="#4">4 配色方案</a></span></h3><h3 id="4-1-创建自己的配色方案"><a href="#4-1-创建自己的配色方案" class="headerlink" title="4.1 创建自己的配色方案"></a><span id="jumpto41"><a href="#4.1">4.1 创建自己的配色方案</a></span></h3><p>可以在 <code>settings.json</code> 文件的 <code>schemes</code> 数组中定义配色方案。 它们是使用以下格式写入的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span> : <span class="string">&quot;Campbell&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;cursorColor&quot;</span>: <span class="string">&quot;#FFFFFF&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;selectionBackground&quot;</span>: <span class="string">&quot;#FFFFFF&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;background&quot;</span> : <span class="string">&quot;#0C0C0C&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;foreground&quot;</span> : <span class="string">&quot;#CCCCCC&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;black&quot;</span> : <span class="string">&quot;#0C0C0C&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;blue&quot;</span> : <span class="string">&quot;#0037DA&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;cyan&quot;</span> : <span class="string">&quot;#3A96DD&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;green&quot;</span> : <span class="string">&quot;#13A10E&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;purple&quot;</span> : <span class="string">&quot;#881798&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;red&quot;</span> : <span class="string">&quot;#C50F1F&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;white&quot;</span> : <span class="string">&quot;#CCCCCC&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;yellow&quot;</span> : <span class="string">&quot;#C19C00&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightBlack&quot;</span> : <span class="string">&quot;#767676&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightBlue&quot;</span> : <span class="string">&quot;#3B78FF&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightCyan&quot;</span> : <span class="string">&quot;#61D6D6&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightGreen&quot;</span> : <span class="string">&quot;#16C60C&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightPurple&quot;</span> : <span class="string">&quot;#B4009E&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightRed&quot;</span> : <span class="string">&quot;#E74856&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightWhite&quot;</span> : <span class="string">&quot;#F2F2F2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;brightYellow&quot;</span> : <span class="string">&quot;#F9F1A5&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+<p>除 <code>name</code> 以外，每个设置都接受十六进制格式（ <code>&quot;#rgb&quot;</code> 或 <code>&quot;#rrggbb&quot;</code> ）的字符串形式的颜色。 <code>cursorColor</code> 和 <code>selectionBackground</code> 设置是可选的。</p>
+<h3 id="4-2-包含的配色方案"><a href="#4-2-包含的配色方案" class="headerlink" title="4.2 包含的配色方案"></a><span id="jumpto442"><a href="#4.2">4.2 包含的配色方案</a></span></h3><p><code>Windows terminal</code> 将这些配色方案包含在 <code>defaults.json</code> 文件中，可按住 <code>alt</code> 并选择设置按钮来访问该文件。 如果要在一个命令行配置文件中设置配色方案，可以在<code>settings.json</code> 文件中添加 <code>colorScheme</code> 属性，并将配色方案的 <code>name</code> 作为值。</p>
+<p>支持的方案有很多。</p>
+<p><strong>Campbell</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/campbell-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>Campbell Powershell</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/campbell-powershell-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>Vintage</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/vintage-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>One Half Dark</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/vintage-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+
+<p><strong>One Half Light</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/one-half-light-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>Solarized Dark</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/solarized-dark-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>Solarized Light</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/solarized-light-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>Tango Dark</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/tango-dark-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+<p><strong>Tango Light</strong></p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/tango-light-color-scheme.png" style="zoom:30%" div align=center alt="show"/>
+
+
+
+<h3 id="5-配置文件简单说明"><a href="#5-配置文件简单说明" class="headerlink" title="5. 配置文件简单说明"></a><span id="jumpto5"><a href="#5">5. 配置文件简单说明</a></span></h3><p>下面列出的设置特定于每个唯一的配置文件。 如果要将设置应用于所有配置文件，则可以将其添加到 <code>settings.json</code> 文件中配置文件列表上方的 <code>&quot;default&quot;</code> 部分。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&quot;defaults&quot;:</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// SETTINGS TO APPLY TO ALL PROFILES</span></span><br><span class="line">&#125;,</span><br><span class="line">&quot;list&quot;:</span><br><span class="line">[</span><br><span class="line">    <span class="comment">// PROFILE OBJECTS</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-5-1-常规配置"><a href="#5-5-1-常规配置" class="headerlink" title="5.5.1 常规配置"></a><span id="jumpto551"><a href="#5.5.1">5.5.1 常规配置</a></span></h3><ul>
+<li><code>Name</code> : 这是将在下拉菜单中显示的配置文件的名称。 此值还用作启动时传递给 <code>shell</code> 的“标题”。也可以使用 <code>tabTitle</code> 覆盖此“标题”行为。</li>
+<li><code>Command line</code> : 配置文件中使用的可执行文件。</li>
+<li><code>Starting directory</code> : <code>shell</code> 程序在加载时开始的目录</li>
+<li><code>Icon</code> : 设置显示在选项卡，下拉菜单，跳转列表和选项卡切换器中的图标。</li>
+<li><code>Tab title</code> : 如果设置，它将替换名称作为标题，以在启动时传递给 <code>shell</code></li>
+<li><code>Hide</code> : 如果将 <code>hidden</code> 设置为 <code>true</code> ，则配置文件将不会出现在配置文件列表中。 这可用于隐藏默认配置文件和动态生成的配置文件，同时将它们保留在设置文件中。</li>
+</ul>
+<p>关于 <code>Starting directory</code> 需要注意的是其默认行为：如果未指定 <code>startingDirectory</code> 值，则根据启动终端的位置，获得不同的结果：</p>
+<ul>
+<li>从“开始”菜单运行 <code>Windows Terminal </code>：<code>C：\ windows \ system32</code></li>
+<li>从“开始”菜单运行 <code>wt.exe</code> ：<code>C：\ windows \ system32</code></li>
+<li>从 <code>Win + R</code> 运行 <code>wt.exe</code> ：<code>%USERPROFILE%</code></li>
+<li>从资源管理器地址栏中运行 <code>wt.exe</code> : 正在查看的文件夹路径。</li>
+</ul>
+<h3 id="5-5-2-快捷键"><a href="#5-5-2-快捷键" class="headerlink" title="5.5.2 快捷键"></a><span id="jumpto452"><a href="#5.5.2">5.5.2 快捷键</a></span></h3><p><strong>不携带参数的动作格式：</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;commandName&quot;</span>, <span class="attr">&quot;keys&quot;</span>: <span class="string">&quot;modifiers+key&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如，此默认设置使用快捷键 <code>alt + f4</code> 关闭终端窗口：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;closeWindow&quot;</span>, <span class="attr">&quot;keys&quot;</span>: <span class="string">&quot;alt+f4&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>携带参数的动作格式：</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;command&quot;</span>: &#123; <span class="attr">&quot;action&quot;</span>: <span class="string">&quot;commandName&quot;</span>, <span class="attr">&quot;argument&quot;</span>: <span class="string">&quot;value&quot;</span> &#125;, <span class="attr">&quot;keys&quot;</span>: <span class="string">&quot;modifiers+key&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如，此默认设置使用快捷键 <code>ctrl + shift + 1</code> 来根据在下拉菜单中首先列出的配置文件在终端中打开新选项卡（默认会打开 <code>PowerShell</code> 配置文件）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;command&quot;</span>: &#123; <span class="attr">&quot;action&quot;</span>: <span class="string">&quot;newTab&quot;</span>, <span class="attr">&quot;index&quot;</span>: <span class="number">0</span> &#125;, <span class="attr">&quot;keys&quot;</span>: <span class="string">&quot;ctrl+shift+1&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-使用命令行参数"><a href="#6-使用命令行参数" class="headerlink" title="6. 使用命令行参数"></a><span id="jumpto6"><a href="#6">6. 使用命令行参数</a></span></h2><p>可以使用<code> wt.exe</code> 从命令行打开 <code>Windows Terminal</code> 的新实例。 还可以改为使用执行别名 <code>wt</code> .</p>
+<p>有关语法使用可以官方文档 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/terminal/command-line-arguments?tabs=windows">命令行参数语法</a>.</p>
+<img src="https://media.giphy.com/media/7vfUXj4qFCQQuuXio7/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<h2 id="7-命令面板"><a href="#7-命令面板" class="headerlink" title="7. 命令面板"></a><span id="jumpto7"><a href="#7">7. 命令面板</a></span></h2><p>假设需要使用 <code>Ctrl+Shift+P</code> 来打开命令面板。</p>
+<p>在 <code>setting.json</code> 文件中，添加以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;commandPalette&quot;</span>, <span class="attr">&quot;keys&quot;</span>: <span class="string">&quot;ctrl+shift+p&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>这样就可以通过 <code>Ctrl+Shift+P</code> 打开命令面板，命令面板支持命令行输入。</p>
+<img src="https://media.giphy.com/media/CnRK0CmkKNxP3F99BX/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<h2 id="8-搜索"><a href="#8-搜索" class="headerlink" title="8. 搜索"></a><span id="jumpto8"><a href="#8">8. 搜索</a></span></h2><p><code>Windows Terminal</code> 附带一项搜索功能，可用于在文本缓冲区中查找特定关键字。 当尝试查找之前运行的命令或特定文件名时，这非常有用。</p>
+<p><strong>方向搜索</strong></p>
+<img src="https://media.giphy.com/media/hJ0LpwRyqxfmAwpm42/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+<p><strong>大小写匹配搜索</strong></p>
+<img src="https://media.giphy.com/media/MdCxAwD9T3WeTx9L70/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+<p><strong>在窗格中搜索</strong></p>
+<img src="https://media.giphy.com/media/kOR3kmVQf6OFe8PlEz/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+<h2 id="9-窗格"><a href="#9-窗格" class="headerlink" title="9. 窗格"></a><span id="jumpto9"><a href="#9">9. 窗格</a></span></h2><p>通过窗格，你可以在同一个选项卡中并行运行多个命令行应用程序。这可以最大程度地减少在选项卡之间切换的需求，以便你一次查看多个提示符。</p>
+<p><strong>使用键盘</strong></p>
+<p>可以在 <code>Windows Teminal</code> 中创建新的垂直或水平窗格。 垂直拆分将在焦点窗格的右侧打开一个新窗格，而水平拆分将在焦点窗格下方打开一个新窗格。<br>若要创建默认配置文件的新垂直窗格，可以键入 <code>alt+shift++</code>。 若要创建默认配置文件的新水平窗格，可以键入 <code>alt+shift+-</code> 。</p>
+<img src="https://media.giphy.com/media/l5hFoMKcwhxFqJOEKk/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<p><strong>使用下拉菜单</strong></p>
+<p>如果希望通过下拉菜单打开新窗格，可以按住 <code>alt</code> 并单击所需的配置文件。<br>这会 <code>auto</code> 将活动窗口或窗格拆分为所选配置文件的新窗格。 <code>auto</code> 拆分模式按具有最长边缘（可用于创建窗格）的方向进行拆分。</p>
+<img src="https://media.giphy.com/media/O2TQ2mrYO6vyjwLv0s/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<p>使用 <code>ctrl + shift + w </code> 关闭当前窗格.</p>
+<h2 id="10-安装和设置字体"><a href="#10-安装和设置字体" class="headerlink" title="10. 安装和设置字体"></a><span id="jumpto10"><a href="#10">10. 安装和设置字体</a></span></h2><p><code>Cascadia Code</code> 是 <code>Microsoft</code> 提供的一种新的等宽字体，可为命令行应用程序和文本编辑器提供全新的体验。 <code>Cascadia Code</code> 是与 <code>Windows Terminal</code> 一起开发的。 建议将此字体与终端应用程序和文本编辑器（如 <code>Visual Studio</code> 和 <code>Visual Studio Code</code>）一起使用。</p>
+<p><code>Windows Terminal</code> 在其包中提供 <code>Cascadia Code</code> 和 <code>Cascadia Mono</code> ，并默认使用 <code>Cascadia Mono</code> 。</p>
+<p>如果字体没安装可以自行在 <a target="_blank" rel="noopener" href="https://github.com/microsoft/cascadia-code/releases">Cascadia Code GitHub 发布页</a> 下载 。</p>
+<p>当前这里也可以 <code>Oh-my-Posh</code> 推荐的 <a target="_blank" rel="noopener" href="https://github.com/JanDeDobbeleer/oh-my-posh">Nerd Fonts</a> 制作的字体。</p>
+<p>我这里使用的是<a target="_blank" rel="noopener" href="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/InconsolataGo.zip">JetBrainsMono NF</a>。</p>
+<p><em>字体下载安装完成之后，需要设置才会有效。</em></p>
+<p><strong>PowerShell 设置字体：</strong></p>
+<p>打开 <code>powershell</code> 之后，右键选择“属性” - “字体修改” 。</p>
+<p><strong>Window Terminal 设置字体</strong></p>
+<p>设置字体为 <code>JetBrainsMonoMedium NF</code> ,大小 <code>12pt</code> 。</p>
+<p>在 <code>setting.json</code> 文件的 <code>&quot;defaults&quot;</code> 中添加：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;fontFace&quot;: &quot;JetBrainsMonoMedium NF&quot;,</span><br><span class="line">&quot;fontSize&quot;: 12,</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-Oh-My-Posh"><a href="#11-Oh-My-Posh" class="headerlink" title="11. Oh-My-Posh "></a><span id="jumpto11"><a href="#11">11. Oh-My-Posh </a></span></h2><p><code>Oh-My-Posh</code> 目前已经迭代到 <code>Oh-My-Posh 3</code> ,相比于原来的 <code>Oh-My-Posh</code>(目前官方已经将原来的称之为 <code>Oh-My-Posh 2</code> ) 对 <code>PowerShell</code> 的支持更加完善,支持 <code>MAC</code> 、<code>Linux</code> 等平台，</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/JanDeDobbeleer/oh-my-posh">Oh-My-Posh 2</a> 主要是为 <code>PowerShell</code> 提示符提供主题功能。另外如果需要 <code>Powerline</code> ，还需安装<a target="_blank" rel="noopener" href="https://github.com/dahlbyk/posh-git">Posh-Git</a> 将 <code>Git</code> 状态信息添加到提示，并为 <code>Git</code> 命令、参数、远程和分支名称添加 <code>tab</code> 自动补全。</p>
+<p><code>Oh-My-Posh 3</code> 本身已经支持  <code>Powerline</code>，不需要额外下载 <code>posh-git</code> 。</p>
+<p><code>Powerline</code> 是一个常用的命令行插件，提供自定义的命令提示符体验，提供 <code>Git</code> 状态颜色编码和提示符,用于在提示中显示附加信息。 它使用一些附加的字形来正确显示此信息。</p>
+<p><code>Powerline</code> 使用字形来设置提示符样式。 如果你的字体不包含 <code>Powerline</code> 字形，则在整个提示符中，你可能会看到若干 <code>Unicode</code> 替换字符 <code>“&amp;#x25AF”</code> 。</p>
+<p>其次，确保安装了 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git</a>。</p>
+<h2 id="11-1-安装-Oh-My-Posh-3"><a href="#11-1-安装-Oh-My-Posh-3" class="headerlink" title="11.1 安装 Oh-My-Posh 3 "></a><span id="jumpto111"><a href="#111">11.1 安装 Oh-My-Posh 3 </a></span></h2><p>使用 <code>PowerShell</code> ，安装 <code>Oh-My-Posh</code> ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Module oh-my-posh -Scope AllUsers</span><br></pre></td></tr></table></figure>
+
+<p><code>CurrentUser</code> 指的是当前用户，为所有用户设置使用 <code>AllUsers</code> 。</p>
+<p><em>Note: 如果尚未安装 <code>NuGet</code> ，可能需要安装它。 如果是这种情况，<code>PowerShell</code> 命令行会询问是否要安装 <code>NuGet</code> 。 选择 <code>[Y]“是” </code>。 你可能还需要批准从不受信任的存储库 <code>PSGallery</code> 中安装模块。 选择 <code>[Y]“是”</code> 。</em></p>
+<p>如果使用的是 <code>PowerShell Core</code> ，请安装 <code>PSReadline</code> ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Module -Name PSReadLine -Scope AllUsers -Force -SkipPublisherCheck</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="11-2-自定义-PowerShell-提示符"><a href="#11-2-自定义-PowerShell-提示符" class="headerlink" title="11.2 自定义 PowerShell 提示符"></a><span id="jumpto112"><a href="#112">11.2 自定义 PowerShell 提示符</a></span></h2><p>使用命令 <code>notepad $PROFILE</code> 或所选的文本编辑器打开 <code>PowerShell</code> 配置文件。 注意这不是的 <code>Windows Terminal</code> 配置文件。 <code>PowerShell</code> 配置文件是一个脚本，该脚本在每次启动 <code>PowerShell</code> 时运行。</p>
+<p><code>$PROFILE</code> 变量自动存储当前会话中可用的 <code>PowerShell</code> 配置文件的路径。</p>
+<p>这里我们使用管理权限打开 <code>powershell.exe</code> ，利用 <code>$PROFILE</code> 变量对当前主机的所有用户配置。</p>
+<p>当前主机，所有用户的配置路径是： <code>$PROFILE.AllUsersCurrentHost</code>.</p>
+<p>这里需要注意下， <code>PowerShell</code> 脚本执行策略。</p>
+<p>为了防止恶意脚本的执行， <code>PowerShell</code> 中设计 <code>Execution Policy</code>, 一种可以理解为执行策略的设计理念。<br>用户可以在不同的应用场景下设置不同的策略来防止恶意脚本的执行。<br>执行策略分为 6 种： <code>Restricted</code> 、 <code>AllSigned</code> 、 <code>RemoteSigned</code> 、<code>Unrestricted</code> 、 <code>Bypass</code> 、<code>Undefined</code></p>
+<p>使用 <code>Get-ExecutionPolicy -List</code> 查看以下当前工作域的权限。 如果是 <code>Undefined</code> 的话，建议改为 <code>RemoteSigned</code> 。</p>
+<p>修改命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy RemoteSigned -Scope LocalMachine</span><br></pre></td></tr></table></figure>
+
+<p><code>CurrentUser</code> 指的是当前用户，为所有用户设置使用 <code>LocalMachine</code> 。</p>
+<h2 id="11-2-1-检查配置文件"><a href="#11-2-1-检查配置文件" class="headerlink" title="11.2.1 检查配置文件"></a><span id="jumpto1121"><a href="#1121">11.2.1 检查配置文件</a></span></h2><p>确定是否已在本地计算机上创建 “所有用户，当前主机” 配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test-Path -Path <span class="variable">$PROFILE</span>.AllUsersCurrentHost</span><br></pre></td></tr></table></figure>
+
+<p>如果返回 Flase, 则先执行 <a href="#jumpto1121">11.2.2 创建配置文件</a>, 如果返回 True , 则直接跳到执行<a href="#jumpto1123">11.2.3 编辑配置文件</a>。</p>
+<p>或者可以直接查看变量 <code>$PROFILE</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$PROFILE | Get-Member -Type NoteProperty</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-2-2-创建配置文件"><a href="#11-2-2-创建配置文件" class="headerlink" title="11.2.2 创建配置文件"></a><span id="jumpto1122"><a href="#1122">11.2.2 创建配置文件</a></span></h2><p>若要创建 PowerShell 配置文件，请使用以下命令格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(Test-Path -Path &lt;profile-name&gt;)) &#123;</span><br><span class="line">  New-Item -ItemType File -Path &lt;profile-name&gt; -Force</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如，若要在 <code>PowerShell</code> 创建当前主机所有用户的配置文件，请使用以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(Test-Path -Path <span class="variable">$PROFILE</span>.AllUsersCurrentHost)) &#123;</span><br><span class="line">  New-Item -ItemType File -Path <span class="variable">$PROFILE</span>.AllUsersCurrentHost -Force</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行日志参考：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; Test-Path -Path <span class="variable">$PROFILE</span>.AllUsersCurrentHost</span><br><span class="line">False</span><br><span class="line">PS C:\WINDOWS\system32&gt; <span class="keyword">if</span> (!(Test-Path -Path <span class="variable">$PROFILE</span>.AllUsersCurrentHost)) &#123;</span><br><span class="line">&gt;&gt;   New-Item -ItemType File -Path <span class="variable">$PROFILE</span>.AllUsersCurrentHost -Force</span><br><span class="line">&gt;&gt; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    目录: C:\Windows\System32\WindowsPowerShell\v1.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Mode                LastWriteTime         Length Name</span><br><span class="line">----                -------------         ------ ----</span><br><span class="line">-a----        2021/2/20     10:49              0 Microsoft.PowerShell_profile.ps1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PS C:\WINDOWS\system32&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="11-2-3-编辑配置文件"><a href="#11-2-3-编辑配置文件" class="headerlink" title="11.2.3 编辑配置文件"></a><span id="jumpto1123"><a href="#1123">11.2.3 编辑配置文件</a></span></h2><p>若要在 “记事本” 中打开 <code>PowerShell</code> 当前主机所有用户的配置文件，添加以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notepad <span class="variable">$PROFILE</span>.AllUsersCurrentHost</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>PowerShell</code> 配置文件中，文件末尾添加使用 <code>jandedobbeleer</code> 主题的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-PoshPrompt -Theme jandedobbeleer</span><br></pre></td></tr></table></figure>
+
+<p>保存关闭 <code>PowerShell</code> 配置文件之后，在 <code>PowerShell</code> 命令行中输入 <code>. $profile.AllUsersCurrentHost</code> 立即生效。</p>
+<p>关于 <code>powershell</code> 的更多使用说明，可以参考官网的说明<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7">介绍如何创建和使用 PowerShell 配置文件</a> 。</p>
+<h2 id="11-2-4-自定义主题"><a href="#11-2-4-自定义主题" class="headerlink" title="11.2.4 自定义主题"></a><span id="jumpto1124"><a href="#1124">11.2.4 自定义主题</a></span></h2><p><code>Oh-My-Posh</code> 附带了若干内置主题。前默认安装的路径是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\WindowsPowerShell\Modules\oh-my-posh\3.96.0\themes</span><br></pre></td></tr></table></figure>
+
+<p>实际上，每个新实例启动时都读取 <code>profile</code> 文件 会导入 <code> Oh-My-Posh</code>，然后 设置 <code>Oh-My-Posh</code> 主题。</p>
+<p>我们可以使用以下命令查看当前支持的主题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-PoshThemes</span><br></pre></td></tr></table></figure>
+
+<p>如果需要自定义主题，可以导出主题到根目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Export-PoshTheme -FilePath ~&#x2F;.mytheme.omp.json</span><br></pre></td></tr></table></figure>
+
+<p>自行修改之后，使用自定义的主题：<br>修改 <code>PowerShell</code> 的当前主机所有用户的配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-PoshPrompt -Theme ~&#x2F;.mytheme.omp.json</span><br></pre></td></tr></table></figure>
+
+<p>最后，执行 <code>$PROFILE</code> 使当前配置生效。</p>
+<p>当然，如果只是想在当前打开的 <code>shell</code> 种有效的话， 可以不更新到 <code>PowerShell</code> 的当前主机所有用户的配置文件，直接在当前 <code>shell</code> 中执行。</p>
+<p>也可以直接修改 <code>Oh-My-Posh</code> 自带的主题。</p>
+<p>默认支持的主题还是比较多的。</p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/February22100672.png" style="zoom:80%" div align=center/>
+
+<p>下面我依次设置自带的主题，大家可以看下区别：</p>
+<img src="https://gitee.com/miaogs/blog_image/raw/master/0222121374.png" style="zoom:80%" div align=center/>
+
+
+
+<h2 id="12-右键打开"><a href="#12-右键打开" class="headerlink" title="12. 右键打开"></a><span id="jumpto12"><a href="#12">12. 右键打开</a></span></h2><p><code>Window Terminal</code> 也可以实现类似鼠标右键打开 <code>powershell</code> 、 <code>cmd</code> 窗口。</p>
+<p>新建一个文本文件比如 <code>OpenCmdHere.txt</code> ，然后复制以下内容，修改  <code>%USERNAME%</code> 为自己的用户名，图标 <code>terminal.ico</code> 可以下载我下方的图片，注意图片格式为 <code>.ico</code> 。</p>
+<p>然后另存为 <code>OpenCmdHere.reg</code> 。 执行 <code>OpenCmdHere.reg</code> 文件即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; 若原先有，先删除原来的</span><br><span class="line">;[-HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCmdHere]</span><br><span class="line">;[-HKEY_CLASSES_ROOT\Directory\Background\shell\runas]</span><br><span class="line">;[-HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellAdmin]</span><br><span class="line">[-HKEY_CLASSES_ROOT\Directory\Background\shell\wt]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">;Windows Terminal Preview</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]</span><br><span class="line">@&#x3D;&quot;Open Windows Terminal Preview here&quot;</span><br><span class="line">;&quot;Icon&quot;&#x3D;&quot;%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps\\terminal.ico&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\Users\\%USERNAME%\\AppData\\Local\\Microsoft\\WindowsApps\\terminal.ico&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]</span><br><span class="line">@&#x3D;&quot;C:\\Users\\%USERNAME%\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe&quot;</span><br></pre></td></tr></table></figure>
+
+<p>最后，修改一下 <code>Window terminal</code> 的 <code>setting.json</code> 文件， 在 <code>&quot;list&quot;</code> 中添加 <code>startingDirectory&quot;:null,</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Make changes here to the powershell.exe profile.</span></span><br><span class="line">    <span class="attr">&quot;guid&quot;</span>: <span class="string">&quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Windows PowerShell&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span>: <span class="string">&quot;powershell.exe&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;startingDirectory&quot;</span>:<span class="literal">null</span>,</span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+<img src="https://gitee.com/miaogs/blog_image/raw/master/terminal.png" style="zoom:100%" div align=center/>
+
+<p>如果不需要高级配置，后面这一章节可以直接忽略。<br>大家可以看下我的最终效果。</p>
+<p><a href="#jumptolatest">点击查看我的最终效果</a></p>
+<h2 id="13-自定义配置"><a href="#13-自定义配置" class="headerlink" title="13. 自定义配置"></a><span id="jumpto13"><a href="#13">13. 自定义配置</a></span></h2><p>不管配置文件设置如何，下面列出的属性都会影响整个 <code>Window Terminal</code> 窗口。 这些应该放在 <code>settings.json</code> 文件的根目录下。（默认文本编辑器在 <a href="ms-settings:defaultapps">Windows</a> 设置 中定义。）</p>
+<p><code>Windows Terminal</code> 支持自定义影响整个应用程序的全局属性、影响每个配置文件的设置的配置文件属性以及允许你使用键盘与 <code>Windows Terminal</code> 交互的键绑定。</p>
+<h3 id="13-1-1-默认的配置文件"><a href="#13-1-1-默认的配置文件" class="headerlink" title="13.1.1 默认的配置文件"></a><span id="jumpto131"><a href="#13.1.1">13.1.1 默认的配置文件</a></span></h3><p>可以按 <code>ctrl+shift+t</code> 或者直接选择窗口上方 <code>+</code>（加号）按钮，也可以在命令行中输入 <code>wt new-tab</code> ，打开默认配置文件的新选项卡。 若要打开其他配置文件，请选择 <code>+</code> 按钮旁的 <code>˅</code>（箭头）打开下拉菜单。 然后可以从中选择要打开的配置文件。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>defaultProfile</code></p>
+</li>
+<li><p>必要性 ：必填</p>
+</li>
+<li><p>可配置的值 ：<code>GUID</code> 或配置文件名称为字符串</p>
+</li>
+<li><p>默认值 ：<code>PowerShell</code> 的 <code>GUID</code></p>
+</li>
+</ul>
+<p>这个我将默认的改为 <code>cmd</code> 了。<code>0caa0dad-35be-5f56-a8ff-afceeeaa6101</code> 是 <code>cmd.exe</code> 的 <code>GUID</code> 。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;defaultProfile&quot;: &quot;&#123;0caa0dad-35be-5f56-a8ff-afceeeaa6101&#125;&quot;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-1-2-开机自启动"><a href="#13-1-2-开机自启动" class="headerlink" title="13.1.2 开机自启动"></a><span id="jumpto1312"><a href="#13.1.2">13.1.2 开机自启动</a></span></h3><p>设置为 <code>true</code> 时，这将在启动时启动 <code>Windows Terminal</code> 。 将此设置为 <code>false</code> 将禁用启动任务条目。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>startOnUserLogin</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可配置的值 ：<code>true</code> , <code>false</code></p>
+</li>
+<li><p>默认值 ：<code>false</code></p>
+</li>
+</ul>
+<h3 id="13-1-3-加载方式"><a href="#13-1-3-加载方式" class="headerlink" title="13.1.3 加载方式"></a><span id="jumpto1313"><a href="#13.1.3">13.1.3 加载方式</a></span></h3><p>这定义了 <code>Windows Terminal</code> 将以最大化，全屏或在窗口中启动。 将其设置为焦点等效于在默认模式下启动 <code>Windows Terminal</code> ，但启用了焦点模式。 同样，将其设置为 <code>maximumedFocus</code> 将导致在启用了对焦模式的最大化窗口启动 <code>Windows Terminal</code> 。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>launchMode</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可配置的值 ：<code>default</code> , <code>maximized</code> , <code>fullscreen</code> , <code>focus</code> , <code>maximizedFocus</code></p>
+</li>
+<li><p>默认值 ：<code>focus</code></p>
+</li>
+</ul>
+<h3 id="13-1-4-加载窗口配置"><a href="#13-1-4-加载窗口配置" class="headerlink" title="13.1.4 加载窗口配置"></a><span id="jumpto1314"><a href="#13.1.4">13.1.4 加载窗口配置</a></span></h3><p><strong>加载窗口的列</strong></p>
+<p>第一次加载时在窗口中显示的字符列数。 如果将 <code>launchMode</code>设置为 <code> maximized</code> 或 <code>maximizedFocus</code> ，则将忽略此属性。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>initialCols</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可配置的值 ：整数</p>
+</li>
+<li><p>默认值 ：120</p>
+</li>
+</ul>
+<p><strong>加载窗口的行</strong></p>
+<p>第一次加载时在窗口中显示的行数。 如果将 <code>launchMode</code> 设置为 <code>maximized</code> 或 <code>maximizedFocus</code> ，则将忽略此属性。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>initialRows</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可配置的值 ：整数</p>
+</li>
+<li><p>默认值 ：30</p>
+</li>
+</ul>
+<p><strong>加载位置</strong></p>
+<p>设置第一次加载时窗口左上角的像素位置。 在具有多个显示器的系统上，这些坐标相对于主显示器的左上角。 如果未提供 <code>X</code> 或 <code>Y</code> 坐标，则终端将使用系统默认值作为该值。 如果将 <code>launchMode</code> 设置为 <code>maximized</code> 或 <code>maximizedFocus</code> ，则窗口将在由这些坐标指定的监视器上最大化。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称：<code>initialPosition</code></p>
+</li>
+<li><p>必要性：可选</p>
+</li>
+<li><p>可配置的值：(支持4种格式的字符串坐标)：<code>&quot;,&quot;</code> , <code>&quot;#,#&quot;</code> , <code>&quot;#,&quot;</code> , <code>&quot;,#&quot;</code></p>
+</li>
+<li><p>默认值： <code>&quot;,&quot;</code></p>
+</li>
+</ul>
+<h3 id="13-1-5-禁用动态配置文件"><a href="#13-1-5-禁用动态配置文件" class="headerlink" title="13.1.5 禁用动态配置文件"></a><span id="jumpto1315"><a href="#13.1.5">13.1.5 禁用动态配置文件</a></span></h3><p>可以设置禁用哪些动态配置文件生成器，从而防止它们在启动时将其配置文件添加到配置文件列表中。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>disabledProfileSources</code></p>
+</li>
+<li><p>必要性：可选</p>
+</li>
+<li><p>可配置的值 ： <code>&quot;Windows.Terminal.Wsl”</code> , <code>“Windows.Terminal.Azure” </code> , <code>“ Windows.Terminal.PowershellCore”</code></p>
+</li>
+<li><p>默认值： <code>[]</code></p>
+</li>
+</ul>
+<h3 id="13-1-6-启动动作"><a href="#13-1-6-启动动作" class="headerlink" title="13.1.6 启动动作"></a><span id="jumpto1316"><a href="#13.1.6">13.1.6 启动动作</a></span></h3><p>这个目前只有 <code>Preview</code> 版本才会有。<br>设置要在启动时执行的操作的列表，默认情况下允许 <code>Window Terminal</code> 使用一组自定义的选项卡和窗格启动。<br>仅当未提供任何命令行参数时，才会应用这些操作。 动作列表由一个字符串表示，该字符串的格式与命令行参数中的命令相同。</p>
+<p><strong>有关命令格式的更多信息，请访问命令行参数页面。</strong></p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ：<code>startupActions</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可配置的值 ：表示要运行的命令列表的字符串</p>
+</li>
+<li><p>默认值 ： <code>&quot;&quot;</code></p>
+</li>
+</ul>
+<h3 id="13-2-交互"><a href="#13-2-交互" class="headerlink" title="13.2 交互"></a><span id="jumpto132"><a href="#13.2">13.2 交互</a></span></h3><h3 id="13-2-1-自动将选择内容复制到剪贴板"><a href="#13-2-1-自动将选择内容复制到剪贴板" class="headerlink" title="13.2.1 自动将选择内容复制到剪贴板"></a><span id="jumpto1321"><a href="#13.2.1">13.2.1 自动将选择内容复制到剪贴板</a></span></h3><p>如果将其设置为 <code>true</code> ，则所选内容将在创建后立即复制到剪贴板。 在这种情况下，鼠标右键单击将始终粘贴。 设置为 <code>false</code> 时，选择将保留并等待进一步的操作。 用鼠标右键单击将复制选择。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>copyOnSelect</code></p>
+</li>
+<li><p>必要性 ： 可选</p>
+</li>
+<li><p>可配置的值 ： <code>true</code> , <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>false</code></p>
+</li>
+</ul>
+<p>这里我将默认配置改为了 <code>true</code> .</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If enabled, selections are automatically copied to your clipboard.</span></span><br><span class="line">&quot;copyOnSelect&quot;: true,</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-2-2-复制文本格式"><a href="#13-2-2-复制文本格式" class="headerlink" title="13.2.2 复制文本格式"></a><span id="jumpto1322"><a href="#13.2.2">13.2.2 复制文本格式</a></span></h3><p>设置为 <code>true</code> 时，所选文本的颜色和字体格式也将复制到剪贴板。 设置为 <code>false</code> 时，仅将纯文本复制到剪贴板。 可以指定要复制的格式。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>copyFormatting</code></p>
+</li>
+<li><p>必要性 ： 可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code> , <code>false</code>, <code>all</code> , <code>none</code> , <code>html</code> ,<code>rtf</code></p>
+</li>
+<li><p>默认值 ： <code>false</code></p>
+</li>
+</ul>
+<h3 id="13-2-3-将窗口大小调整为字符网格"><a href="#13-2-3-将窗口大小调整为字符网格" class="headerlink" title="13.2.3 将窗口大小调整为字符网格"></a><span id="jumpto1323"><a href="#13.2.3">13.2.3 将窗口大小调整为字符网格</a></span></h3><p>设置为 <code>true</code>时，窗口将在调整大小时捕捉到最近的字符边界。 设置为 <code>false</code> 时，窗口将“平滑地”调整大小。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>snapToGridOnResize</code></p>
+</li>
+<li><p>必要性 ： 可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<img src="https://media.giphy.com/media/B5BCVGu3rXeM2QjH4j/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<h3 id="13-2-4-Tab切换器"><a href="#13-2-4-Tab切换器" class="headerlink" title="13.2.4 Tab切换器"></a><span id="jumpto1324"><a href="#13.2.4">13.2.4 Tab切换器</a></span></h3><p><strong>Tab切换器界面样式</strong></p>
+<p>如果将其设置为 <code>true</code> 或 <code>mru</code> ，则 <code>nextTab</code> 和 <code>prevTab</code> 命令将使用选项卡切换器 <code>UI</code> 以及最近使用的顺序。<br>当设置为 <code>inOrder</code> 时，这些操作将在选项卡栏中以其当前顺序切换选项卡。<br>用户界面将在垂直列表中显示所有当前打开的选项卡，可使用键盘或鼠标进行导航。</p>
+<p>最初按下<code>nextTab</code> 和 <code>prevTab</code> 的动作时，选项卡切换器将打开，并且只要按住修改键，该选项卡切换器就会保持打开状态。<br>释放所有修改键后，切换器将关闭，突出显示的选项卡将被聚焦。 <code>tab / shift + tab</code> ，向上和向下箭头键以及 <code>nextTab / prevTab</code> 操作可用于在切换器 <code>UI</code> 中循环。</p>
+<p>要禁用选项卡切换器，可以将其设置为 <code>false</code> 或 <code>disabled</code> 。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>tabSwitcherMode</code></p>
+</li>
+<li><p>必要性 ： 可选</p>
+</li>
+<li><p>可接受的值 ：<code>true</code> , <code>false</code> , <code>mru</code> , <code>inOrder</code> , <code>disabled</code></p>
+</li>
+<li><p>默认值 ：<code>inOrder</code></p>
+</li>
+</ul>
+<p><strong>启用Tab切换器</strong></p>
+<p>如果将其设置为 <code>true</code>，则 <code>nextTab</code> 和 <code>prevTab</code> 命令将使用选项卡切换器 <code>UI</code> 。<br>用户界面将在垂直列表中显示所有当前打开的选项卡，可使用键盘或鼠标进行导航。</p>
+<p>最初按下 <code>nextTab</code> 和 <code>prevTab</code> 的动作时，选项卡切换器将打开，并且只要按住修改键，该选项卡切换器就会保持打开状态。 释放所有修改键后，切换器将关闭，突出显示的选项卡将被聚焦。 <code>tab / shift + tab</code> ，向上和向下箭头键以及 <code>nextTab / prevTab</code> 操作可用于在切换器 <code>UI</code> 中循环。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>useTabSwitcher</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<img src="https://media.giphy.com/media/FTNZrKSUiwGqnl93xi/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<p><em>Note:在1.5版及更高版本中，<code>useTabSwitcher</code> 设置不再可用。 建议您改用 <code>tabSwitcherMode</code> 设置。</em></p>
+<h3 id="13-2-5-粘贴警告"><a href="#13-2-5-粘贴警告" class="headerlink" title="13.2.5 粘贴警告"></a><span id="jumpto1325"><a href="#13.2.5">13.2.5 粘贴警告</a></span></h3><p><strong>当要粘贴的文本很大时发出警告</strong></p>
+<p>设置为 <code>true</code> 时，尝试粘贴超过 <code>5KiB</code> 字符的文本将显示一个对话框，询问是否继续粘贴。<br>设置为 <code>false</code> 时，不显示对话框，而是立即粘贴文本。<br>如果在选择了很多文本之后经常不小心在终端上单击鼠标右键，这可能对防止在连接到终端的程序接收剪贴板的内容时终端变得无响应的情况很有用。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>largePasteWarning</code></p>
+</li>
+<li><p>必要性 ： 可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<p><strong>当要粘贴的文本包含多行时发出警告</strong></p>
+<p>设置为 <code>true</code> 时，尝试多行粘贴文本将显示一个对话框，询问是否继续粘贴。<br>设置为 <code>false</code> 时，不显示对话框，而是立即粘贴文本。<br>在大多数外壳程序中，一行对应一个命令，因此，如果将包含 “换行符” 的文本粘贴到外壳程序中，则粘贴时可能会自动执行一个或多个命令，而没有时间来验证这些命令。<br>如果经常从不受信任的网站复制和粘贴命令，这将很有用。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>multiLinePasteWarning</code></p>
+</li>
+<li><p>必要性 ： 可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<h3 id="13-3-外观"><a href="#13-3-外观" class="headerlink" title="13.3 外观"></a><span id="jumpto133"><a href="#13.3">13.3 外观</a></span></h3><h3 id="13-3-1-主题"><a href="#13-3-1-主题" class="headerlink" title="13.3.1 主题"></a><span id="jumpto1331"><a href="#13.3.1">13.3.1 主题</a></span></h3><p>这设置了应用程序的主题。 <code>system</code> 将使用与 <code>Windows</code> 相同的主题。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>theme</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>&quot;system&quot;</code>, <code>&quot;dark&quot;</code> , <code>&quot;light&quot;</code></p>
+</li>
+<li><p>默认值 ： <code>&quot;system&quot;</code></p>
+</li>
+</ul>
+<h3 id="13-3-2-显示Tab"><a href="#13-3-2-显示Tab" class="headerlink" title="13.3.2 显示Tab"></a><span id="jumpto1332"><a href="#13.3.2">13.3.2 显示Tab</a></span></h3><p>设置为 <code>true</code> 时，总是显示选项卡。<br>如果将其设置为 <code>false</code> 并将 <code>showTabsInTitlebar</code> 设置为 <code>true</code> ，则选项卡将始终显示在标题栏下方。<br>如果将其设置为 <code>false</code> 并将 <code>showTabsInTitlebar</code> 设置为 <code>false</code> ，则只有在存在多个选项卡后，才通过键入 <code>ctrl + shift + t</code> 或键入分配给 <code>newTab</code> 的键绑定来显示选项卡。</p>
+<p>请注意，更改此设置将需要启动新的终端实例。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>alwaysShowTabs</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<h3 id="13-3-3-隐藏标题栏"><a href="#13-3-3-隐藏标题栏" class="headerlink" title="13.3.3 隐藏标题栏"></a><span id="jumpto1333"><a href="#13.3.3">13.3.3 隐藏标题栏</a></span></h3><p>设置为 <code>true</code> 时，选项卡将移动到标题栏，并且标题栏消失。<br>设置为 <code>false</code> 时，标题栏位于选项卡上方。</p>
+<p>请注意，更改此设置将需要启动新的终端实例。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>showTabsInTitlebar</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<img src="https://media.giphy.com/media/hW7exb5M8vdPV1y83K/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<h3 id="13-3-4-始终处于最佳模式"><a href="#13-3-4-始终处于最佳模式" class="headerlink" title="13.3.4 始终处于最佳模式"></a><span id="jumpto1334"><a href="#13.3.4">13.3.4 始终处于最佳模式</a></span></h3><p>设置为 <code>true</code> 时，<code>Windows</code> 终端窗口将在桌面上所有其他窗口的顶部启动。<br>也可以使用 <code>toggleAlwaysOnTop</code> 键绑定来切换此状态。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>alwaysOnTop</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<h3 id="13-3-5-Tab-宽度模式"><a href="#13-3-5-Tab-宽度模式" class="headerlink" title="13.3.5 Tab 宽度模式"></a><span id="jumpto1335"><a href="#13.3.5">13.3.5 Tab 宽度模式</a></span></h3><p>这将设置选项卡的宽度。 <code>&quot;equal&quot;</code> 使每个选项卡具有相同的宽度。 <code>&quot;titleLength&quot;</code> 将每个选项卡的大小调整到其标题的长度。 <code>&quot;compact&quot;</code> 会将每个非活动标签缩小到图标的宽度，从而为活动标签留出更多空间来显示其完整标题。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>tabWidthMode</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>&quot;equal&quot;</code> , <code>&quot;titleLength&quot;</code> , <code>&quot;compact&quot;</code></p>
+</li>
+<li><p>默认值 ： <code>&quot;equal&quot;</code></p>
+</li>
+</ul>
+<img src="https://media.giphy.com/media/VgimY4sXWFDLzU7Cqr/giphy.gif" style="zoom:100%" div align=center alt="show"/>
+
+
+<h3 id="13-3-6-Tab-禁用窗格动画"><a href="#13-3-6-Tab-禁用窗格动画" class="headerlink" title="13.3.6 Tab 禁用窗格动画"></a><span id="jumpto1336"><a href="#13.3.6">13.3.6 Tab 禁用窗格动画</a></span></h3><p>设置为 <code>true</code> 时，这将禁用整个应用程序的视觉动画。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>disableAnimations</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<h3 id="13-3-7-显示关闭所有选项卡弹出窗口"><a href="#13-3-7-显示关闭所有选项卡弹出窗口" class="headerlink" title="13.3.7 显示关闭所有选项卡弹出窗口"></a><span id="jumpto1337"><a href="#13.3.7">13.3.7 显示关闭所有选项卡弹出窗口</a></span></h3><p>如果将其设置为 <code>true</code> ，则关闭窗口并打开多个选项卡将需要确认。<br>设置为 <code>false</code> 时，关闭具有多个选项卡打开的窗口将不需要确认。</p>
+<p>配置说明：</p>
+<ul>
+<li><p>属性名称 ： <code>confirmCloseAllTabs</code></p>
+</li>
+<li><p>必要性 ：可选</p>
+</li>
+<li><p>可接受的值 ： <code>true</code>, <code>false</code></p>
+</li>
+<li><p>默认值 ： <code>true</code></p>
+</li>
+</ul>
+<span id="jumptolatest">
+<img src="https://gitee.com/miaogs/blog_image/raw/master/0222123075.png" style="zoom:100%" div align=center alt="show"/>
+</span>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/02/06/python-env/" rel="next" title="python-env">
+                <i class="fa fa-chevron-left"></i> python-env
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/07/06/QT-Install/" rel="prev" title="QT+MSVC2019+VS Code">
+                QT+MSVC2019+VS Code <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="Michael Miao" />
+            
+              <p class="site-author-name" itemprop="name">Michael Miao</p>
+              <p class="site-description motion-element" itemprop="description">��ƴ�Ż�Ӯ</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">2. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%90%AF%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">3. 启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88"><span class="nav-number">3.1.</span> <span class="nav-text">4 配色方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88"><span class="nav-number">3.2.</span> <span class="nav-text">4.1 创建自己的配色方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%8C%85%E5%90%AB%E7%9A%84%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88"><span class="nav-number">3.3.</span> <span class="nav-text">4.2 包含的配色方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%80%E5%8D%95%E8%AF%B4%E6%98%8E"><span class="nav-number">3.4.</span> <span class="nav-text">5. 配置文件简单说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-1-%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE"><span class="nav-number">3.5.</span> <span class="nav-text">5.5.1 常规配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-2-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.6.</span> <span class="nav-text">5.5.2 快捷键</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">6. 使用命令行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF"><span class="nav-number">5.</span> <span class="nav-text">7. 命令面板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%90%9C%E7%B4%A2"><span class="nav-number">6.</span> <span class="nav-text">8. 搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E7%AA%97%E6%A0%BC"><span class="nav-number">7.</span> <span class="nav-text">9. 窗格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE%E5%AD%97%E4%BD%93"><span class="nav-number">8.</span> <span class="nav-text">10. 安装和设置字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Oh-My-Posh"><span class="nav-number">9.</span> <span class="nav-text">11. Oh-My-Posh </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-1-%E5%AE%89%E8%A3%85-Oh-My-Posh-3"><span class="nav-number">10.</span> <span class="nav-text">11.1 安装 Oh-My-Posh 3 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-%E8%87%AA%E5%AE%9A%E4%B9%89-PowerShell-%E6%8F%90%E7%A4%BA%E7%AC%A6"><span class="nav-number">11.</span> <span class="nav-text">11.2 自定义 PowerShell 提示符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-1-%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">12.</span> <span class="nav-text">11.2.1 检查配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-2-%E5%88%9B%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">13.</span> <span class="nav-text">11.2.2 创建配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-3-%E7%BC%96%E8%BE%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">14.</span> <span class="nav-text">11.2.3 编辑配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-4-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">11.2.4 自定义主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80"><span class="nav-number">16.</span> <span class="nav-text">12. 右键打开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE"><span class="nav-number">17.</span> <span class="nav-text">13. 自定义配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-1-%E9%BB%98%E8%AE%A4%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">17.1.</span> <span class="nav-text">13.1.1 默认的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-2-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-number">17.2.</span> <span class="nav-text">13.1.2 开机自启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-3-%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-number">17.3.</span> <span class="nav-text">13.1.3 加载方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-4-%E5%8A%A0%E8%BD%BD%E7%AA%97%E5%8F%A3%E9%85%8D%E7%BD%AE"><span class="nav-number">17.4.</span> <span class="nav-text">13.1.4 加载窗口配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-5-%E7%A6%81%E7%94%A8%E5%8A%A8%E6%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">17.5.</span> <span class="nav-text">13.1.5 禁用动态配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-6-%E5%90%AF%E5%8A%A8%E5%8A%A8%E4%BD%9C"><span class="nav-number">17.6.</span> <span class="nav-text">13.1.6 启动动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-%E4%BA%A4%E4%BA%92"><span class="nav-number">17.7.</span> <span class="nav-text">13.2 交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-1-%E8%87%AA%E5%8A%A8%E5%B0%86%E9%80%89%E6%8B%A9%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="nav-number">17.8.</span> <span class="nav-text">13.2.1 自动将选择内容复制到剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-2-%E5%A4%8D%E5%88%B6%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="nav-number">17.9.</span> <span class="nav-text">13.2.2 复制文本格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-3-%E5%B0%86%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E8%B0%83%E6%95%B4%E4%B8%BA%E5%AD%97%E7%AC%A6%E7%BD%91%E6%A0%BC"><span class="nav-number">17.10.</span> <span class="nav-text">13.2.3 将窗口大小调整为字符网格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-4-Tab%E5%88%87%E6%8D%A2%E5%99%A8"><span class="nav-number">17.11.</span> <span class="nav-text">13.2.4 Tab切换器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-5-%E7%B2%98%E8%B4%B4%E8%AD%A6%E5%91%8A"><span class="nav-number">17.12.</span> <span class="nav-text">13.2.5 粘贴警告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-%E5%A4%96%E8%A7%82"><span class="nav-number">17.13.</span> <span class="nav-text">13.3 外观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-1-%E4%B8%BB%E9%A2%98"><span class="nav-number">17.14.</span> <span class="nav-text">13.3.1 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-2-%E6%98%BE%E7%A4%BATab"><span class="nav-number">17.15.</span> <span class="nav-text">13.3.2 显示Tab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-3-%E9%9A%90%E8%97%8F%E6%A0%87%E9%A2%98%E6%A0%8F"><span class="nav-number">17.16.</span> <span class="nav-text">13.3.3 隐藏标题栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-4-%E5%A7%8B%E7%BB%88%E5%A4%84%E4%BA%8E%E6%9C%80%E4%BD%B3%E6%A8%A1%E5%BC%8F"><span class="nav-number">17.17.</span> <span class="nav-text">13.3.4 始终处于最佳模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-5-Tab-%E5%AE%BD%E5%BA%A6%E6%A8%A1%E5%BC%8F"><span class="nav-number">17.18.</span> <span class="nav-text">13.3.5 Tab 宽度模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-6-Tab-%E7%A6%81%E7%94%A8%E7%AA%97%E6%A0%BC%E5%8A%A8%E7%94%BB"><span class="nav-number">17.19.</span> <span class="nav-text">13.3.6 Tab 禁用窗格动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-3-7-%E6%98%BE%E7%A4%BA%E5%85%B3%E9%97%AD%E6%89%80%E6%9C%89%E9%80%89%E9%A1%B9%E5%8D%A1%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3"><span class="nav-number">17.20.</span> <span class="nav-text">13.3.7 显示关闭所有选项卡弹出窗口</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael Miao</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
